@@ -57,6 +57,37 @@ main{position:relative;z-index:2;margin-top:-64px;padding:0 clamp(20px,3.2vw,58p
 @media(max-width:1050px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.card-content{min-height:205px}.photo{height:clamp(150px,24vw,230px)}}
 @media(max-width:600px){.hero{width:100%;aspect-ratio:16/9;height:auto;min-height:0}.hero-art{object-position:48% center}.secure{top:15px;right:14px;font-size:10px;padding:8px 12px}.scroll-cue{bottom:26px}main{margin-top:-42px;padding:0 13px 18px}.app-panel{padding:21px 14px 17px;border-radius:22px}.panel-head{align-items:flex-start;margin-bottom:17px}.panel-title h1{font-size:22px}.panel-title p{font-size:11px}.app-count{gap:5px}.app-count strong{font-size:23px}.app-count span{font-size:8px;letter-spacing:1.4px}.grid{grid-template-columns:1fr;gap:14px}.card{border-radius:17px}.photo{height:190px}.card-icon{left:16px;bottom:12px;width:54px;height:54px}.card-content{min-height:185px;padding:18px 18px 16px}.card h2{font-size:21px}.card p{font-size:13px}.open{padding-top:17px}.footer{font-size:9px;flex-direction:column;gap:5px;padding:0 4px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.scroll-cue{animation:none}.card{opacity:1;transform:none;transition:none}.photo img,.open-arrow{transition:none}}
+
+/* Homepage visual polish */
+.hero{background:#eaf3fc}
+.hero-art{object-fit:contain;object-position:center center}
+.secure{top:clamp(18px,2.5vw,34px);right:clamp(18px,3vw,48px);padding:9px 14px;font-size:11px;background:rgba(255,255,255,.72);box-shadow:0 5px 20px rgba(13,48,85,.07)}
+.scroll-cue{bottom:27px;gap:6px;font-size:11px;color:#315475}
+.scroll-cue .chevron{width:36px;height:36px;font-size:20px;box-shadow:0 5px 16px rgba(14,43,77,.12)}
+main{margin-top:-48px;padding-left:clamp(18px,3vw,48px);padding-right:clamp(18px,3vw,48px);padding-bottom:28px}
+.app-panel{max-width:1680px;padding:clamp(24px,2.2vw,36px);border-radius:26px;background:rgba(255,255,255,.94);border-color:rgba(255,255,255,.98);box-shadow:0 18px 55px rgba(25,67,111,.10),0 1px 4px rgba(25,67,111,.035)}
+.panel-head{margin-bottom:20px}
+.panel-title h1{font-size:clamp(23px,1.8vw,28px);letter-spacing:-.9px}
+.panel-title p{font-size:12px;color:#8494a9}
+.app-count strong{font-size:27px}
+.app-count span{font-size:9px;letter-spacing:2px}
+.grid{gap:clamp(14px,1.25vw,20px)}
+.card{border-radius:18px;box-shadow:0 5px 20px rgba(22,55,91,.055);border-color:#e8eef5}
+.photo{height:clamp(150px,14vw,205px)}
+.number{left:17px;top:14px;font-size:21px}
+.card-icon{left:17px;bottom:12px;width:54px;height:54px;border-radius:16px}
+.card-content{padding:19px 20px 18px;min-height:205px}
+.card h2{font-size:clamp(18px,1.25vw,21px);line-height:1.16;letter-spacing:-.65px;margin-bottom:8px}
+.card p{font-size:13px;line-height:1.5;color:#71839b}
+.open{padding-top:16px}
+.open-inner{min-height:48px;border-radius:12px;padding:5px 6px 5px 15px}
+.open-label{font-size:12px;font-weight:700}
+.open-arrow{width:36px;height:36px;flex-basis:36px;border-radius:10px;font-size:20px}
+.footer{max-width:1680px;margin-top:15px;font-size:10px;color:#91a0b3}
+@media(min-width:1500px){.photo{height:205px}.card-content{min-height:205px;padding:19px 21px 18px}}
+@media(max-width:1050px){main{margin-top:-40px}.app-panel{padding:24px}.photo{height:clamp(155px,22vw,205px)}}
+@media(max-width:600px){main{margin-top:-34px;padding:0 12px 18px}.app-panel{padding:19px 13px 15px;border-radius:20px}.panel-head{margin-bottom:15px}.panel-title h1{font-size:21px}.grid{gap:13px}.photo{height:185px}.card-content{min-height:175px;padding:17px 17px 15px}.card h2{font-size:20px}.card p{font-size:12.5px}.open{padding-top:14px}.secure{top:12px;right:12px;padding:7px 10px;font-size:9px}.scroll-cue{bottom:20px}.scroll-cue .chevron{width:32px;height:32px}}
+
 </style>
 </head>
 <body>
