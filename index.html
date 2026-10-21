@@ -83,10 +83,11 @@ main{margin-top:-48px;padding-left:clamp(18px,3vw,48px);padding-right:clamp(18px
 .open-inner{min-height:48px;border-radius:12px;padding:5px 6px 5px 15px}
 .open-label{font-size:12px;font-weight:700}
 .open-arrow{width:36px;height:36px;flex-basis:36px;border-radius:10px;font-size:20px}
-.footer{max-width:1680px;margin-top:15px;font-size:10px;color:#91a0b3}
+.footer{max-width:1680px;margin-top:15px;font-size:10px;color:#91a0b3;position:relative;min-height:16px;padding-bottom:2px}
+.footer-credit{position:absolute;left:50%;top:0;transform:translateX(-50%);color:#8f9baa;font-size:10px;font-weight:400;white-space:nowrap;text-align:center}
 @media(min-width:1500px){.photo{height:205px}.card-content{min-height:205px;padding:19px 21px 18px}}
 @media(max-width:1050px){main{margin-top:-40px}.app-panel{padding:24px}.photo{height:clamp(155px,22vw,205px)}}
-@media(max-width:600px){main{margin-top:-34px;padding:0 12px 18px}.app-panel{padding:19px 13px 15px;border-radius:20px}.panel-head{margin-bottom:15px}.panel-title h1{font-size:21px}.grid{gap:13px}.photo{height:185px}.card-content{min-height:175px;padding:17px 17px 15px}.card h2{font-size:20px}.card p{font-size:12.5px}.open{padding-top:14px}.secure{top:12px;right:12px;padding:7px 10px;font-size:9px}.scroll-cue{bottom:20px}.scroll-cue .chevron{width:32px;height:32px}}
+@media(max-width:600px){.footer{align-items:center;text-align:center}.footer-credit{position:static;transform:none;order:2}.footer span:last-child{order:3}main{margin-top:-34px;padding:0 12px 18px}.app-panel{padding:19px 13px 15px;border-radius:20px}.panel-head{margin-bottom:15px}.panel-title h1{font-size:21px}.grid{gap:13px}.photo{height:185px}.card-content{min-height:175px;padding:17px 17px 15px}.card h2{font-size:20px}.card p{font-size:12.5px}.open{padding-top:14px}.secure{top:12px;right:12px;padding:7px 10px;font-size:9px}.scroll-cue{bottom:20px}.scroll-cue .chevron{width:32px;height:32px}}
 
 
 /* Full-screen hero: preserve the complete 16:9 artwork on wide displays */
@@ -140,7 +141,7 @@ main{margin-top:0}
 <div class="card-content"><h2>Quotation Management</h2><p>Access quotation preparation, vendor information, purchase enquiries and approvals.</p><div class="open"><div class="open-inner"><span class="open-label">Open Application</span><span class="open-arrow">→</span></div></div></div></a>
 </div>
 </section>
-<footer class="footer"><span>© 2026 Crescent Contractors Pvt. Ltd. All rights reserved.</span><span>Central Management System · Version 3.1</span></footer>
+<footer class="footer"><span>© 2026 Crescent Contractors Pvt. Ltd. All rights reserved.</span><span class="footer-credit">Developed &amp; Designed by Mutheeul Haq</span><span>Central Management System · Version 3.1</span></footer>
 </main>
 <script>
 (() => {
