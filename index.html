@@ -761,6 +761,27 @@ main#applications{position:absolute!important;left:0!important;right:0!important
  .saas-hero .hero-copy h1{font-size:clamp(36px,7vw,58px)!important;letter-spacing:-1.8px!important}
 }
 
+
+/* Keep the first hero headline phrase on one line */
+.saas-hero .hero-copy h1 .headline-line{
+  display:inline-block!important;
+  white-space:nowrap!important;
+  font-size:clamp(32px,3.8vw,58px)!important;
+  letter-spacing:-2.2px!important;
+}
+@media(max-width:850px){
+  .saas-hero .hero-copy h1 .headline-line{
+    font-size:clamp(28px,5.5vw,46px)!important;
+    letter-spacing:-1.5px!important;
+  }
+}
+@media(max-width:600px){
+  .saas-hero .hero-copy h1 .headline-line{
+    font-size:clamp(26px,7.2vw,38px)!important;
+    letter-spacing:-1.4px!important;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -777,7 +798,7 @@ main#applications{position:absolute!important;left:0!important;right:0!important
   <div class="hero-content" id="top">
     <div class="hero-copy">
       <div class="eyebrow"><span class="eyebrow-line"></span> CENTRAL MANAGEMENT PORTAL</div>
-      <h1>Everything Connected.<br><em>Work, made simpler.</em></h1>
+      <h1><span class="headline-line">Everything Connected.</span><br><em>Work, made simpler.</em></h1>
       <p>Access all your business applications in one place and keep your projects, people and processes moving.</p>
       <div class="hero-features">
         <div><span class="feature-icon">⚙</span><b>Unified<br>Operations</b></div>
