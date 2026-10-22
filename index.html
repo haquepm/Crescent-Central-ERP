@@ -621,6 +621,56 @@ main#applications{position:absolute!important;left:0!important;right:0!important
   .hero-features>div{align-items:center!important;text-align:center!important}
   .feature-icon{display:grid!important;place-items:center!important;width:34px!important;height:34px!important;font-size:27px!important}
 }
+
+/* Separate hero and application-card section; display feature row under intro */
+@media (min-width:601px){
+ html,body{height:auto!important;min-height:100%!important;overflow-x:hidden!important;overflow-y:auto!important}
+ .saas-hero{height:100svh!important;min-height:680px!important;max-height:900px!important;overflow:hidden!important}
+ .saas-hero:before{background:linear-gradient(90deg,rgba(2,26,66,.78) 0%,rgba(3,43,91,.48) 35%,rgba(5,57,109,.10) 66%,rgba(5,42,87,.02) 100%),linear-gradient(0deg,rgba(2,25,62,.16) 0%,transparent 48%),url("https://raw.githubusercontent.com/haquepm/Crescent-Central-ERP/main/Construction%20ERP%20at%20Golden%20Hour.png") center center/cover no-repeat!important}
+ .saas-hero .hero-copy{width:min(52%,760px)!important;padding-top:clamp(68px,8.5vh,92px)!important}
+ .saas-hero .hero-copy h1{font-weight:600!important;letter-spacing:-3px!important}
+ .saas-hero .hero-copy>p{font-weight:400!important}
+ .hero-features{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;width:min(100%,650px)!important;max-width:650px!important;margin-top:clamp(22px,3vh,34px)!important}
+ .hero-features>div{min-height:74px!important;display:flex!important;flex-direction:column!important;justify-content:center!important;align-items:center!important;text-align:center!important;gap:7px!important;padding:0 12px!important;border-right:1px solid rgba(255,255,255,.48)!important}
+ .hero-features>div:last-child{border-right:0!important}
+ .feature-icon{width:42px!important;height:42px!important;display:grid!important;place-items:center!important;font-size:31px!important;line-height:1!important}
+ .hero-features b{font-size:clamp(10px,.82vw,13px)!important;line-height:1.2!important;font-weight:500!important;text-align:center!important}
+ .saas-hero .scroll-cue{display:none!important}
+ main#applications{position:relative!important;inset:auto!important;height:auto!important;min-height:0!important;margin:0!important;padding:30px clamp(24px,4.3vw,74px) 12px!important;background:linear-gradient(180deg,#052657 0%,#031a40 100%)!important;overflow:visible!important}
+ main#applications:before{display:block!important;opacity:.08!important}
+ .app-panel{max-width:1600px!important;margin:0 auto!important;padding:0!important;background:transparent!important;border:0!important;box-shadow:none!important;backdrop-filter:none!important}
+ .panel-head{display:none!important}
+ .app-panel .grid{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:clamp(12px,1.1vw,18px)!important;margin:0!important}
+ .app-panel .card{aspect-ratio:1/1!important;height:auto!important;min-height:0!important;opacity:1!important;visibility:visible!important;transform:none!important}
+ .app-panel .photo{height:46%!important;min-height:0!important;flex:0 0 46%!important}
+ .app-panel .card-content{min-height:0!important;padding:clamp(10px,1.1vw,17px)!important}
+ .app-panel .card h2{font-size:clamp(13px,1.05vw,17px)!important;font-weight:600!important}
+ .app-panel .card p{font-size:clamp(10px,.78vw,12px)!important}
+ .footer{max-width:1600px!important;margin:10px auto 0!important}
+}
+.brand-lockup{gap:0!important;min-width:0!important}
+.brand-lockup .brand-mark,.brand-lockup .brand-name{display:none!important}
+.brand-lockup:before{content:"";display:block;width:clamp(150px,13vw,225px);height:52px;background:url("https://raw.githubusercontent.com/haquepm/Crescent-Central-ERP/main/CRESCENT-Logo.webp") left center/contain no-repeat}
+@media(max-width:600px){
+ html,body{height:auto!important;min-height:100%!important;overflow-x:hidden!important;overflow-y:auto!important}
+ .brand-lockup:before{width:145px;height:40px}
+ .saas-hero{height:100svh!important;min-height:690px!important;max-height:none!important}
+ .saas-hero .hero-copy{padding-top:64px!important}
+ .hero-features{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;margin-top:22px!important}
+ .hero-features>div{align-items:center!important;text-align:center!important;padding:0 6px!important}
+ .feature-icon{width:34px!important;height:34px!important;display:grid!important;place-items:center!important;font-size:26px!important}
+ main#applications{position:relative!important;inset:auto!important;margin:0!important;padding:20px 12px 15px!important}
+ .app-panel{padding:0!important;background:transparent!important;border:0!important;box-shadow:none!important}
+ .panel-head{display:none!important}
+ .app-panel .grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:10px!important}
+ .app-panel .card{aspect-ratio:auto!important;min-height:0!important}
+ .app-panel .photo{height:105px!important;flex:0 0 105px!important}
+ .app-panel .card-content{min-height:145px!important;padding:9px!important}
+ .app-panel .card h2{font-size:11px!important}.app-panel .card p{font-size:8px!important}
+ .footer{font-size:7px!important;flex-direction:column!important;align-items:center!important;text-align:center!important}
+ .footer-credit{position:static!important;transform:none!important}
+}
+
 </style>
 </head>
 <body>
