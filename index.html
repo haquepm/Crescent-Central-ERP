@@ -228,6 +228,28 @@ main{margin-top:0!important;padding-top:64px}
  .saas-hero .hero-copy{padding-top:65px;padding-bottom:130px}
 }
 
+
+/* Application section — continue the premium navy visual language of the hero */
+body{background:#081a3c}
+main#applications{position:relative;isolation:isolate;padding:76px clamp(20px,5.2vw,84px) 30px;background:radial-gradient(ellipse at 50% 0%,#183b70 0%,#0d2853 48%,#081a3c 100%);color:#fff}
+main#applications:before{content:"";position:absolute;inset:0;z-index:-1;opacity:.15;background-image:linear-gradient(rgba(255,255,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.07) 1px,transparent 1px);background-size:54px 54px;mask-image:linear-gradient(to bottom,black,transparent 90%)}
+.app-panel{max-width:1500px;padding:clamp(25px,3vw,44px);border:1px solid rgba(255,255,255,.16);border-radius:26px;background:rgba(255,255,255,.075);backdrop-filter:blur(18px);box-shadow:0 24px 70px rgba(0,0,0,.22)}
+.panel-title h1{color:#fff}
+.panel-title p{color:rgba(222,235,255,.66)}
+.app-count{color:rgba(220,234,255,.7)}
+.app-count strong{color:#dceaff}
+.app-count span{color:#a9bfdf}
+.grid{gap:clamp(14px,1.35vw,21px)}
+.card{background:rgba(255,255,255,.97);border:1px solid rgba(255,255,255,.32);box-shadow:0 12px 32px rgba(0,0,0,.17)}
+.card:hover{box-shadow:0 20px 42px rgba(0,0,0,.28)}
+.card-content{background:linear-gradient(180deg,#fff 0%,#f7faff 100%)}
+.footer{max-width:1500px;color:rgba(219,232,251,.62)}
+.footer-credit{color:rgba(219,232,251,.68)}
+@media(max-width:600px){
+ main#applications{padding:42px 13px 22px}
+ .app-panel{padding:21px 14px 17px;border-radius:21px}
+}
+
 </style>
 </head>
 <body>
@@ -250,7 +272,7 @@ main{margin-top:0!important;padding-top:64px}
   </div>
     <a class="scroll-cue" href="#applications"><span class="chevron">⌄</span><span>Scroll to explore</span></a>
 </section>
-<main id="applications"><main id="applications">
+<main id="applications">
 <section class="app-panel" aria-labelledby="applications-title">
 <div class="panel-head">
 <div class="panel-title"><h1 id="applications-title">Management applications</h1><p>Select a workspace to continue</p></div>
