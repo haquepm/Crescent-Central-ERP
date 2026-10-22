@@ -217,6 +217,17 @@ main{margin-top:0!important;padding-top:64px}
 @media(max-width:850px){.saas-hero{padding:0 22px}.hero-nav{height:72px}.nav-links{gap:15px;padding:9px 13px}.nav-links a{font-size:9px}.hero-copy{padding-top:58px}.preview-wrap{width:110%;margin-left:-5%;margin-top:48px;aspect-ratio:1.8/1}.portal-preview{grid-template-columns:150px 1fr}.preview-sidebar{padding:15px 10px}.preview-main{padding:16px}.preview-apps{grid-template-columns:repeat(2,1fr)}.preview-apps>div:nth-child(n+3){display:none}.preview-stats>div{padding:9px}.preview-stats b{font-size:16px}}
 @media(max-width:600px){.saas-hero{padding:0 16px}.hero-nav{height:65px}.brand-name{font-size:14px}.brand-name small{font-size:6px}.brand-mark{transform:scale(.85);transform-origin:left center;width:27px}.nav-links{display:none}.nav-status{font-size:9px;padding:9px 11px}.hero-copy{padding:55px 2px 0}.hero-copy h1{font-size:39px;letter-spacing:-2px;margin:18px 0 12px}.hero-copy>p{font-size:12px;line-height:1.7}.hero-actions{gap:8px;margin-top:20px}.primary-action,.secondary-action{font-size:9px;padding:12px 11px;gap:9px}.hero-proof{font-size:8px;margin-top:15px}.preview-wrap{width:130%;margin-left:-15%;margin-top:42px;aspect-ratio:1.22/1}.portal-preview{grid-template-columns:95px 1fr;border-radius:10px 10px 0 0}.preview-sidebar{padding:10px 6px;gap:5px}.preview-brand{font-size:7px;margin:0 0 12px 2px;gap:4px}.mini-mark{width:17px;height:17px}.preview-menu{font-size:7px;padding:8px 5px;gap:5px}.preview-menu span{font-size:9px}.preview-side-foot{font-size:6px}.avatar{width:20px;height:20px;font-size:6px}.preview-main{padding:11px 9px}.preview-top{font-size:7px;padding-bottom:9px}.preview-date{font-size:5px}.preview-welcome{padding:11px 0 9px;display:block}.preview-welcome small{font-size:6px}.preview-welcome h3{font-size:13px}.preview-welcome p{font-size:6px}.welcome-chip{display:inline-block;margin-top:7px;font-size:6px;padding:5px 7px}.preview-stats{gap:4px}.preview-stats>div{padding:7px 5px}.preview-stats small{font-size:5px;letter-spacing:.3px}.preview-stats b{font-size:13px;margin:5px 0 2px}.preview-stats>div>span{font-size:5px}.preview-stats .status-live{font-size:10px}.preview-app-head{font-size:7px;margin:10px 0 6px}.preview-app-head span{font-size:5px}.preview-apps{gap:4px}.preview-apps>div{padding:6px 4px;gap:4px}.app-symbol{width:18px;height:18px;flex-basis:18px;font-size:9px}.preview-apps b{font-size:6px}.preview-apps small{font-size:5px}.preview-apps strong{font-size:7px}.saas-hero .scroll-cue{display:none}main{padding:35px 12px 18px!important}}
 
+
+/* Remove decorative dashboard mockup from the landing hero */
+.preview-wrap,.preview-back,.portal-preview{display:none!important}
+.saas-hero{min-height: min(760px, calc(100vh - 20px));display:flex;flex-direction:column}
+.saas-hero .hero-copy{margin:auto auto 0;padding-top:72px;padding-bottom:150px}
+.saas-hero .scroll-cue{bottom:30px}
+@media(max-width:600px){
+ .saas-hero{min-height:680px}
+ .saas-hero .hero-copy{padding-top:65px;padding-bottom:130px}
+}
+
 </style>
 </head>
 <body>
@@ -237,37 +248,7 @@ main{margin-top:0!important;padding-top:64px}
     <div class="hero-actions"><a class="primary-action" href="#applications">Explore Applications <span>↗</span></a><a class="secondary-action" href="#applications">Discover workspaces <span>↓</span></a></div>
     <div class="hero-proof"><span class="proof-icon">✓</span> A unified digital workspace for Crescent Contractors</div>
   </div>
-  <div class="preview-wrap" aria-label="Management portal preview">
-    <div class="preview-back back-two"></div><div class="preview-back back-one"></div>
-    <div class="portal-preview">
-      <aside class="preview-sidebar">
-        <div class="preview-brand"><span class="mini-mark">C</span><b>CRESCENT</b></div>
-        <div class="preview-menu active"><span>▦</span> Overview</div>
-        <div class="preview-menu"><span>▣</span> Applications</div>
-        <div class="preview-menu"><span>◈</span> Operations</div>
-        <div class="preview-menu"><span>♧</span> Team & People</div>
-        <div class="preview-menu"><span>⚙</span> Settings</div>
-        <div class="preview-side-foot"><span class="avatar">CC</span><span><b>Crescent Team</b><small>Workspace</small></span></div>
-      </aside>
-      <div class="preview-main">
-        <div class="preview-top"><span>Workspace overview</span><span class="preview-date">CENTRAL MANAGEMENT SYSTEM</span></div>
-        <div class="preview-welcome"><div><small>GOOD DAY, CRESCENT TEAM</small><h3>Everything in one place.</h3><p>Choose an application to continue your work.</p></div><span class="welcome-chip"><i></i> All systems connected</span></div>
-        <div class="preview-stats">
-          <div><small>CONNECTED APPLICATIONS</small><b>04</b><span>Unified access</span></div>
-          <div><small>WORKSPACE ACCESS</small><b>24<span>/7</span></b><span>Available anytime</span></div>
-          <div><small>PORTAL STATUS</small><b class="status-live">● Live</b><span>Secure workspace</span></div>
-        </div>
-        <div class="preview-app-head"><b>Your applications</b><span>VIEW ALL ↗</span></div>
-        <div class="preview-apps">
-          <div><i class="app-symbol orange">▤</i><span><b>Subcontractor</b><small>Management</small></span><strong>↗</strong></div>
-          <div><i class="app-symbol blue">♙</i><span><b>Labour</b><small>Management</small></span><strong>↗</strong></div>
-          <div><i class="app-symbol orange">▣</i><span><b>Asset</b><small>Management</small></span><strong>↗</strong></div>
-          <div><i class="app-symbol blue">▧</i><span><b>Quotation</b><small>Management</small></span><strong>↗</strong></div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <a class="scroll-cue" href="#applications"><span class="chevron">⌄</span><span>Scroll to explore</span></a>
+    <a class="scroll-cue" href="#applications"><span class="chevron">⌄</span><span>Scroll to explore</span></a>
 </section>
 <main id="applications"><main id="applications">
 <section class="app-panel" aria-labelledby="applications-title">
