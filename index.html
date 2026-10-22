@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#f4f8fd">
+<meta name="theme-color" content="#061b43">
 <title>Crescent Contractors | Central Management System</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
 :root{--navy:#092957;--blue:#0870bd;--orange:#f47708;--ink:#102b50;--muted:#647894;--paper:#f3f7fc}
 *{box-sizing:border-box}
@@ -250,29 +250,98 @@ main#applications:before{content:"";position:absolute;inset:0;z-index:-1;opacity
  .app-panel{padding:21px 14px 17px;border-radius:21px}
 }
 
+
+/* Montserrat typography throughout the complete portal */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
+:root{--navy:#061b43;--blue:#0878d1;--orange:#ff8a00;--ink:#fff}
+html,body,*{font-family:'Montserrat',Arial,sans-serif!important}
+body{background:#031638;color:#fff}
+.saas-hero{width:100%;height:100svh;min-height:700px;aspect-ratio:auto;margin:0;padding:0 4.2vw;position:relative;overflow:hidden;isolation:isolate;background:linear-gradient(112deg,#031943 0%,#073d80 48%,#1679c9 100%);color:#fff}
+.saas-hero:before{content:"";position:absolute;inset:0;z-index:-2;background:linear-gradient(90deg,rgba(2,19,54,.98) 0%,rgba(4,37,87,.94) 36%,rgba(5,40,87,.4) 62%,rgba(3,24,54,.08) 100%),url('https://raw.githubusercontent.com/haquepm/Crescent-Central-ERP/main/Card%20Images/Asset%20Management.png') right center/65% 100% no-repeat}
+.saas-hero:after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(180deg,rgba(4,21,53,.12) 0%,transparent 55%,rgba(2,18,48,.82) 100%),linear-gradient(135deg,transparent 0 23%,rgba(40,145,235,.10) 23.1% 25%,transparent 25.1% 100%)}
+.hero-nav{height:92px;max-width:1680px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:20px;border-bottom:1px solid rgba(255,255,255,.13);position:relative;z-index:5}
+.brand-lockup{display:flex;align-items:center;gap:10px;color:#fff;text-decoration:none;min-width:250px}
+.brand-mark{height:38px;width:37px;display:flex;align-items:end;gap:2px}
+.brand-mark i{display:block;width:8px;background:#ff9000;transform:skewY(-25deg);border-radius:1px 1px 0 0}
+.brand-mark i:nth-child(1){height:17px}.brand-mark i:nth-child(2){height:29px;background:#ff9c18}.brand-mark i:nth-child(3){height:36px;background:#0876ca}.brand-mark i:nth-child(4){height:23px;background:#fff}
+.brand-name{font-size:19px;line-height:1;font-weight:900;letter-spacing:.1px}
+.brand-name small{display:block;margin-top:4px;font-size:8px;letter-spacing:1.25px;color:#ffad48;font-weight:700}
+.nav-links{display:flex;align-items:center;gap:clamp(16px,2.8vw,46px);padding:0;border:0;border-radius:0;background:transparent}
+.nav-links a{font-size:11px;color:rgba(255,255,255,.85);text-decoration:none;font-weight:600;letter-spacing:.1px;padding:13px 0;position:relative}
+.nav-links a.selected:after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:#fff;border-radius:4px}
+.nav-right{display:flex;align-items:center;gap:20px}
+.notification{font-size:22px;color:#fff}
+.nav-status{display:flex;align-items:center;gap:10px;padding:9px 14px;border:1px solid rgba(255,255,255,.28);border-radius:28px;background:rgba(5,63,139,.46);color:#fff;text-decoration:none;font-size:11px;font-weight:600;white-space:nowrap}
+.nav-status b{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:#fff;color:#07509b;font-size:11px}
+.nav-status span{font-size:16px}
+.hero-content{max-width:1680px;margin:0 auto;position:relative;z-index:2}
+.hero-copy{width:min(52%,690px);margin:0;padding:clamp(58px,7vh,92px) 0 0;text-align:left}
+.eyebrow{display:flex;align-items:center;gap:22px;padding:0;border:0;background:none;border-radius:0;color:#d8eaff;font-size:12px;letter-spacing:4px;font-weight:600}
+.eyebrow-line{display:block;width:65px;height:5px;border-radius:3px;background:#ff9200}
+.hero-copy h1{font-size:clamp(56px,6vw,88px);line-height:.98;letter-spacing:-4px;margin:24px 0 18px;font-weight:900;color:#fff}
+.hero-copy h1 em{font-style:normal;color:#ff9200;background:none}
+.hero-copy>p{max-width:610px;margin:0;color:rgba(241,247,255,.9);font-size:clamp(15px,1.35vw,19px);line-height:1.55;font-weight:500}
+.hero-features{display:flex;align-items:stretch;margin-top:28px;max-width:650px}
+.hero-features>div{flex:1;display:flex;flex-direction:column;align-items:flex-start;gap:8px;padding:0 18px;border-right:1px solid rgba(255,255,255,.34)}
+.hero-features>div:first-child{padding-left:0}.hero-features>div:last-child{border:0}
+.feature-icon{height:40px;color:#fff;font-size:34px;line-height:1;display:flex;align-items:center}
+.hero-features b{font-size:12px;line-height:1.25;font-weight:700;color:#fff}
+.saas-hero .scroll-cue{bottom:25px;left:50%;z-index:5;color:#d8e8ff;font-size:10px}
+.saas-hero .scroll-cue .chevron{height:32px;width:32px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.3);color:#fff;box-shadow:none}
+main#applications{position:relative;isolation:isolate;margin:0;padding:0 clamp(24px,4vw,68px) 18px;background:linear-gradient(180deg,#031638 0%,#062a5c 100%);color:#fff}
+main#applications:before{content:"";position:absolute;inset:0;z-index:-1;opacity:.16;background-image:linear-gradient(rgba(255,255,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.07) 1px,transparent 1px);background-size:48px 48px}
+.app-panel{max-width:1680px;margin:-145px auto 0;position:relative;z-index:4;padding:16px 16px 18px;border:1px solid rgba(255,255,255,.2);border-radius:22px;background:rgba(5,34,75,.78);backdrop-filter:blur(20px);box-shadow:0 22px 65px rgba(0,0,0,.3)}
+.panel-head{padding:3px 8px 14px;margin:0;align-items:center}
+.panel-title h1{color:#fff;font-size:18px;letter-spacing:-.4px}
+.panel-title p{color:rgba(220,234,255,.65);font-size:10px}
+.app-count strong{color:#fff;font-size:22px}.app-count span{color:#b5c9e5;font-size:8px}
+.grid{gap:14px}
+.card{border-radius:15px;background:rgba(9,44,91,.92);border:1px solid rgba(255,255,255,.16);box-shadow:0 9px 25px rgba(0,0,0,.18);color:#fff}
+.card:hover{box-shadow:0 16px 34px rgba(0,0,0,.28)}
+.photo{height:clamp(115px,10vw,150px)}
+.photo:after{background:linear-gradient(180deg,rgba(3,24,54,.12),transparent 45%,rgba(3,24,54,.18))}
+.card-content{min-height:170px;padding:13px 15px 14px;background:linear-gradient(180deg,rgba(11,47,93,.98),rgba(6,31,68,.98))}
+.card h2{color:#fff;font-size:clamp(14px,1.1vw,17px);letter-spacing:-.4px;margin-bottom:6px}
+.card p{color:rgba(231,241,255,.76);font-size:11px;line-height:1.45}
+.open{padding-top:12px}
+.open-inner{min-height:38px;padding:4px 5px 4px 12px;border-radius:22px;background:rgba(255,255,255,.055);border:1px solid color-mix(in srgb,var(--accent),transparent 35%)}
+.open-label{font-size:10px;color:#fff;font-weight:700}
+.open-arrow{height:29px;width:29px;flex-basis:29px;border-radius:50%;font-size:17px}
+.footer{max-width:1680px;margin:10px auto 0;color:rgba(226,238,255,.68);font-size:9px}
+.footer-credit{color:rgba(226,238,255,.65)}
+@media(min-width:1500px){.app-panel{margin-top:-150px}.photo{height:140px}.card-content{min-height:164px}}
+@media(max-width:900px){.saas-hero{min-height:690px}.hero-nav{height:75px}.brand-lockup{min-width:190px}.nav-links{gap:14px}.nav-links a{font-size:9px}.hero-copy{width:58%;padding-top:65px}.hero-copy h1{font-size:58px}.hero-features{margin-top:22px}.hero-features>div{padding:0 10px}.app-panel{margin-top:-105px}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.card-content{min-height:155px}}
+@media(max-width:600px){.saas-hero{height:760px;min-height:760px;padding:0 18px}.saas-hero:before{background:linear-gradient(90deg,rgba(2,19,54,.96),rgba(4,37,87,.78)),url('https://raw.githubusercontent.com/haquepm/Crescent-Central-ERP/main/Card%20Images/Asset%20Management.png') center/cover no-repeat}.hero-nav{height:68px}.brand-lockup{min-width:0;gap:7px}.brand-mark{transform:scale(.78);transform-origin:left center;width:30px}.brand-name{font-size:14px}.brand-name small{font-size:6px;letter-spacing:.8px}.nav-links{display:none}.nav-right{gap:8px}.notification{font-size:17px}.nav-status{font-size:8px;padding:5px 8px;gap:5px}.nav-status b{height:23px;width:23px;font-size:8px}.hero-copy{width:100%;padding-top:72px}.eyebrow{font-size:9px;letter-spacing:2.3px;gap:12px}.eyebrow-line{width:38px;height:4px}.hero-copy h1{font-size:54px;letter-spacing:-2.5px;margin:21px 0 13px}.hero-copy>p{font-size:13px;max-width:390px}.hero-features{margin-top:26px;max-width:100%}.hero-features>div{padding:0 9px;gap:6px}.hero-features>div:first-child{padding-left:0}.feature-icon{font-size:25px;height:30px}.hero-features b{font-size:9px}main#applications{padding:0 12px 16px}.app-panel{margin-top:-145px;padding:12px 10px;border-radius:17px}.panel-head{padding:3px 3px 12px}.panel-title h1{font-size:15px}.panel-title p{font-size:9px}.app-count strong{font-size:18px}.app-count span{font-size:7px;letter-spacing:1px}.grid{grid-template-columns:1fr 1fr;gap:9px}.card{border-radius:12px}.photo{height:100px}.number{font-size:15px;left:10px;top:9px}.card-icon{width:38px;height:38px;border-radius:11px;border-width:3px;left:9px;bottom:8px}.card-icon svg{width:19px;height:19px}.card-content{padding:10px 9px;min-height:145px}.card h2{font-size:12px;line-height:1.2}.card p{font-size:9px;line-height:1.4}.open{padding-top:9px}.open-inner{min-height:31px;padding:3px 4px 3px 8px}.open-label{font-size:8px}.open-arrow{width:23px;height:23px;flex-basis:23px;font-size:14px}.footer{font-size:7px;gap:6px;flex-direction:column;align-items:center;text-align:center}.footer-credit{position:static;transform:none;order:2}.saas-hero .scroll-cue{display:none}}
+
 </style>
 </head>
 <body>
-<section class="hero saas-hero" aria-label="Crescent Contractors management portal">
-  <div class="hero-glow glow-one"></div><div class="hero-glow glow-two"></div>
+<section class="hero saas-hero" aria-label="Crescent Contractors ERP portal">
+  <div class="erp-visual" aria-hidden="true"></div><div class="hero-shade"></div>
   <nav class="hero-nav">
-    <a class="brand-lockup" href="#" aria-label="Crescent Contractors home">
-      <span class="brand-mark"><i></i><i></i><i></i></span>
+    <a class="brand-lockup" href="#applications" aria-label="Crescent Contractors">
+      <span class="brand-mark"><i></i><i></i><i></i><i></i></span>
       <span class="brand-name">CRESCENT<small>CONTRACTORS PVT. LTD.</small></span>
     </a>
-    <div class="nav-links"><a href="#applications">Home</a><a href="#applications">Applications</a><a href="#applications">Workspaces</a><a href="#portal-footer">About</a></div>
-    <a class="nav-status" href="#applications"><span></span> Secure Workspace</a>
+    <div class="nav-links"><a class="selected" href="#top">Home</a><a href="#applications">Applications</a><a href="#applications">Reports</a><a href="#applications">People</a><a href="#applications">Settings</a></div>
+    <div class="nav-right"><span class="notification">♧</span><a class="nav-status" href="#applications"><b>CT</b> Crescent Team <span>⌄</span></a></div>
   </nav>
-  <div class="hero-copy">
-    <div class="eyebrow"><span class="eyebrow-dot"></span> ONE CONNECTED WORKSPACE</div>
-    <h1>Your entire business.<br><em>One central workspace.</em></h1>
-    <p>All your essential construction management applications, connected in one place. Move from project operations to people, assets and procurement with ease.</p>
-    <div class="hero-actions"><a class="primary-action" href="#applications">Explore Applications <span>↗</span></a><a class="secondary-action" href="#applications">Discover workspaces <span>↓</span></a></div>
-    <div class="hero-proof"><span class="proof-icon">✓</span> A unified digital workspace for Crescent Contractors</div>
+  <div class="hero-content" id="top">
+    <div class="hero-copy">
+      <div class="eyebrow"><span class="eyebrow-line"></span> CENTRAL MANAGEMENT PORTAL</div>
+      <h1>All Operations.<br><em>One ERP.</em></h1>
+      <p>Access all your business applications in one place and keep your projects, people and processes moving.</p>
+      <div class="hero-features">
+        <div><span class="feature-icon">⚙</span><b>Unified<br>Operations</b></div>
+        <div><span class="feature-icon">▥</span><b>Real-time<br>Data</b></div>
+        <div><span class="feature-icon">♧</span><b>Better<br>Collaboration</b></div>
+        <div><span class="feature-icon">♢</span><b>Secure<br>Access</b></div>
+      </div>
+    </div>
   </div>
-    <a class="scroll-cue" href="#applications"><span class="chevron">⌄</span><span>Scroll to explore</span></a>
+  <a class="scroll-cue" href="#applications"><span class="chevron">⌄</span><span>Explore applications</span></a>
 </section>
-<main id="applications">
+<main id="applications"><main id="applications">
 <section class="app-panel" aria-labelledby="applications-title">
 <div class="panel-head">
 <div class="panel-title"><h1 id="applications-title">Management applications</h1><p>Select a workspace to continue</p></div>
