@@ -597,6 +597,30 @@ main#applications{position:absolute!important;left:0!important;right:0!important
   .panel-head{padding:0 8px clamp(9px,1.1vh,13px)!important}
   .app-panel .grid{gap:clamp(10px,1vw,16px)!important}
 }
+
+/* Refinements requested: lighter hero typography, compact feature row, square cards */
+@media (min-width:601px){
+  .saas-hero .hero-copy h1{font-weight:600!important;letter-spacing:-3px!important}
+  .saas-hero .hero-copy>p{font-weight:400!important}
+  .hero-features{width:min(100%,650px)!important;max-width:650px!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;align-items:center!important;margin-top:clamp(20px,2.6vh,30px)!important}
+  .hero-features>div{min-height:76px!important;justify-content:center!important;align-items:center!important;text-align:center!important;padding:0 12px!important;gap:7px!important}
+  .feature-icon{width:42px!important;height:42px!important;display:grid!important;place-items:center!important;font-size:32px!important;line-height:1!important}
+  .hero-features b{font-size:clamp(10px,.82vw,13px)!important;line-height:1.2!important;font-weight:500!important;text-align:center!important}
+  .panel-head{display:none!important}
+  .app-panel .grid{margin-top:0!important;align-items:stretch!important}
+  .app-panel .card{aspect-ratio:1/1!important;height:auto!important;min-height:0!important}
+  .app-panel .photo{height:46%!important;min-height:0!important;flex:0 0 46%!important}
+  .app-panel .card-content{min-height:0!important;flex:1!important;padding:clamp(10px,1.1vw,17px)!important}
+  .app-panel .card h2{font-size:clamp(13px,1.05vw,17px)!important;font-weight:600!important}
+  .app-panel .card p{font-size:clamp(10px,.78vw,12px)!important}
+  .app-panel .open{padding-top:10px!important}
+}
+@media(max-width:600px){
+  .panel-head{display:none!important}
+  .saas-hero .hero-copy h1{font-weight:600!important}
+  .hero-features>div{align-items:center!important;text-align:center!important}
+  .feature-icon{display:grid!important;place-items:center!important;width:34px!important;height:34px!important;font-size:27px!important}
+}
 </style>
 </head>
 <body>
