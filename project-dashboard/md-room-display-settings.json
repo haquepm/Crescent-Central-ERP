@@ -1,0 +1,18 @@
+{
+  "mode": "md-room",
+  "dataRefreshSeconds": 60,
+  "slideDurationSeconds": 30,
+  "slideOrder": [
+    "company-overview",
+    "project-portfolio",
+    "financial-overview",
+    "progress-schedule",
+    "project-performance",
+    "operations",
+    "quality-safety",
+    "upcoming-alerts"
+  ],
+  "fullScreen": true,
+  "readOnly": true,
+  "liveDataSource": "pending-erp-integration"
+}
