@@ -581,6 +581,22 @@ main#applications{position:absolute!important;left:0!important;right:0!important
 @media(max-height:820px) and (min-width:601px){.saas-hero .hero-copy{padding-top:7vh!important}.saas-hero .hero-copy h1{font-size:clamp(52px,5vw,74px)!important;margin:14px 0 10px!important}.hero-features{margin-top:20px!important}.app-panel .photo{height:12vh!important}.app-panel .card-content{padding:9px 12px!important}.app-panel .card p{font-size:10px!important}}
 @media(max-width:600px){html,body{height:auto!important;min-height:100%!important;overflow:auto!important}.saas-hero{height:100svh!important;min-height:690px!important;max-height:none!important;padding:0 15px!important}.saas-hero:before{background:linear-gradient(90deg,rgba(2,26,66,.84),rgba(3,43,91,.48)),url("https://raw.githubusercontent.com/haquepm/Crescent-Central-ERP/main/Construction%20ERP%20at%20Golden%20Hour.png") 62% center/cover no-repeat!important}.hero-nav{height:62px!important}.nav-links{display:none!important}.saas-hero .hero-copy{width:100%!important;padding-top:65px!important}.saas-hero .hero-copy h1{font-size:clamp(44px,12vw,60px)!important;letter-spacing:-2.5px!important}.saas-hero .hero-copy>p{font-size:12px!important}.hero-features{margin-top:22px!important}main#applications{position:relative!important;left:auto!important;right:auto!important;bottom:auto!important;margin-top:-90px!important;padding:0 12px 15px!important}.app-panel{padding:11px!important}.app-panel .grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:9px!important}.app-panel .photo{height:100px!important}.app-panel .card-content{min-height:140px!important;padding:9px!important}.app-panel .card h2{font-size:11px!important}.app-panel .card p{font-size:8px!important}.footer{font-size:7px!important;flex-direction:column!important;align-items:center!important;text-align:center!important}.footer-credit{position:static!important;transform:none!important}}
 
+
+/* Final card layout: remove the shared application-panel frame */
+@media (min-width:601px){
+  main#applications{padding-left:clamp(24px,4.3vw,74px)!important;padding-right:clamp(24px,4.3vw,74px)!important}
+  .app-panel{
+    background:transparent!important;
+    border:0!important;
+    box-shadow:none!important;
+    backdrop-filter:none!important;
+    -webkit-backdrop-filter:none!important;
+    padding:0!important;
+    border-radius:0!important;
+  }
+  .panel-head{padding:0 8px clamp(9px,1.1vh,13px)!important}
+  .app-panel .grid{gap:clamp(10px,1vw,16px)!important}
+}
 </style>
 </head>
 <body>
