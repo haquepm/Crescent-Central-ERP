@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import {
   Activity, ArrowDownRight, ArrowUpRight, Bell, CalendarDays, ChevronDown,
   CircleAlert, ClipboardCheck, Clock3, Construction, Download, FileText,
@@ -42,6 +42,7 @@ export default function Dashboard() {
   const [projectId, setProjectId] = useState(projects[0].id);
   const [range, setRange] = useState("This month");
   const [activeTab, setActiveTab] = useState("Overview");
+  const [roomMode, setRoomMode] = useState(false);
   const project = useMemo(() => projects.find(p => p.id === projectId) ?? projects[0], [projectId]);
   const variance = project.progress - project.planned;
 
@@ -65,7 +66,7 @@ export default function Dashboard() {
       <section className="content">
         <header className="topbar">
           <div><div className="eyebrow">CRESCENT / PROJECT INTELLIGENCE</div><h1>Project Dashboard</h1></div>
-          <div className="top-actions"><span className="live"><i/> Demo data</span><button className="icon-btn" aria-label="Notifications"><Bell size={18}/><em>3</em></button><div className="user-chip"><div className="avatar small">CC</div><span>Management</span><ChevronDown size={14}/></div></div>
+          <div className="top-actions"><button className="room-launch" onClick={() => setRoomMode(true)}>▶ MD Room</button><span className="live"><i/> Demo data</span><button className="icon-btn" aria-label="Notifications"><Bell size={18}/><em>3</em></button><div className="user-chip"><div className="avatar small">CC</div><span>Management</span><ChevronDown size={14}/></div></div>
         </header>
 
         <section className="filters">
@@ -132,8 +133,57 @@ export default function Dashboard() {
 
         <footer><span>© Crescent Contractors · Project Intelligence</span><span><i/> Prototype using sample data · Source integrations pending</span></footer>
       </section>
+      {roomMode && <MDRoom onClose={() => setRoomMode(false)} />}
     </main>
   );
+}
+
+function MDRoom({ onClose }: { onClose: () => void }) {
+  const [slide, setSlide] = useState(0);
+  const [paused, setPaused] = useState(false);
+  const [lastRefresh, setLastRefresh] = useState(new Date());
+  const [connection, setConnection] = useState("Awaiting live source connection");
+  const [refreshCount, setRefreshCount] = useState(0);
+  const slides = [
+    { title: "Company overview", subtitle: "Executive snapshot across the Crescent portfolio", cards: [["Active projects","3"],["Combined contract value","₹49.50 Cr"],["Actual cost to date","₹31.45 Cr"],["Reported workforce","246"]], note: "Illustrative portfolio totals · ERP integration pending" },
+    { title: "Project portfolio", subtitle: "Project status at a glance", cards: projects.map(p => [p.name, `${p.progress}% · ${p.status}`]), note: "Project records shown are demo values" },
+    { title: "Financial overview", subtitle: "Contract value, budget and actual cost", cards: [["Contract value","₹49.50 Cr"],["Approved budget","₹42.90 Cr"],["Actual cost","₹31.45 Cr"],["Portfolio cost variance","Demo calculation"]], note: "Financial figures are illustrative, not accounting data" },
+    { title: "Progress & schedule", subtitle: "Planned progress compared with actual delivery", cards: projects.map(p => [p.name, `${p.progress}% actual / ${p.planned}% planned`]), note: "Progress baselines must be connected to approved project updates" },
+    { title: "Project performance", subtitle: "CPI and SPI indicators across projects", cards: projects.map(p => [p.name, `CPI ${p.cpi.toFixed(2)} · SPI ${p.spi.toFixed(2)}`]), note: "Earned-value figures are sample values" },
+    { title: "Operations overview", subtitle: "Labour deployment and site operations", cards: [["Reported workforce","246"],["Materials","Awaiting ERP feed"],["Equipment","Awaiting ERP feed"],["Procurement","Awaiting ERP feed"]], note: "Operational source integrations pending" },
+    { title: "Quality, safety & compliance", subtitle: "Quality inspections, NCRs and safety events", cards: [["Open NCRs","Awaiting data"],["Safety incidents","Awaiting data"],["Inspections","Awaiting data"],["Overdue closures","Awaiting data"]], note: "No quality or safety records are connected yet" },
+    { title: "Upcoming activities & alerts", subtitle: "Milestones and management attention items", cards: [["Critical milestones","Awaiting schedule feed"],["Overdue approvals","Awaiting workflow feed"],["Open RFIs","Awaiting project feed"],["Management alerts","Awaiting live data"]], note: "Alert rules and responsible owners to be configured" },
+  ];
+  useEffect(() => {
+    const refresh = async () => {
+      try {
+        const response = await fetch("/api/dashboard/summary", { cache: "no-store" });
+        const data = await response.json();
+        setConnection(data.connected ? "Live source connected" : "Live source not connected");
+      } catch { setConnection("Dashboard API unavailable"); }
+      setLastRefresh(new Date());
+      setRefreshCount(n => n + 1);
+    };
+    void refresh();
+    const poll = window.setInterval(refresh, 60_000);
+    return () => window.clearInterval(poll);
+  }, []);
+  useEffect(() => {
+    if (paused) return;
+    const timer = window.setInterval(() => setSlide(i => (i + 1) % slides.length), 30_000);
+    return () => window.clearInterval(timer);
+  }, [paused, slides.length]);
+  useEffect(() => {
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape") onClose();
+      if (event.key === "ArrowRight") setSlide(i => (i + 1) % slides.length);
+      if (event.key === "ArrowLeft") setSlide(i => (i - 1 + slides.length) % slides.length);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [onClose, slides.length]);
+  const current = slides[slide];
+  return <div className="md-room"><div className="md-room-top"><div className="md-brand"><span className="md-mark">C</span><div><b>CRESCENT CONTRACTORS</b><small>MANAGEMENT COMMAND CENTRE</small></div></div><div className="md-top-right"><span className="md-live"><i/> {connection}</span><span>{lastRefresh.toLocaleTimeString("en-IN",{hour:"2-digit",minute:"2-digit",second:"2-digit"})} · refreshed {refreshCount}x</span><button onClick={onClose} aria-label="Exit MD Room">✕ Exit</button></div></div><div className="md-room-content"><div className="md-slide-label">EXECUTIVE INTELLIGENCE <span>SLIDE {String(slide+1).padStart(2,"0")} / 08</span></div><h1>{current.title}</h1><p className="md-subtitle">{current.subtitle}</p><div className="md-card-grid">{current.cards.map(([label,value])=><article className="md-metric" key={label}><span>{label}</span><strong>{value}</strong></article>)}</div><div className="md-footnote">DEMO PREVIEW · {current.note}</div></div><div className="md-room-bottom"><div className="md-progress">{slides.map((item,i)=><button key={item.title} className={i===slide?"active":""} onClick={()=>setSlide(i)} aria-label={`Go to slide ${i+1}`}/>)}</div><div className="md-controls"><span>Auto-advance: 30 sec</span><span>Data refresh: 1 min</span><button onClick={()=>setSlide(i=>(i-1+slides.length)%slides.length)}>‹</button><button onClick={()=>setPaused(p=>!p)}>{paused?"▶ Resume":"Ⅱ Pause"}</button><button onClick={()=>setSlide(i=>(i+1)%slides.length)}>›</button></div></div></div>;
 }
 
 function Kpi({title,value,note,icon,tone,trend,down}:any) {
