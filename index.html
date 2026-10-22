@@ -742,6 +742,25 @@ main#applications{position:absolute!important;left:0!important;right:0!important
   .saas-hero:before{background-position:62% center!important}
 }
 
+
+/* Hero readability: subtle navy fade from the left, clear image on the right */
+*{font-family:'Montserrat',Arial,sans-serif!important}
+.saas-hero:before{
+  background:
+    linear-gradient(90deg,
+      rgba(3,27,67,.86) 0%,
+      rgba(4,39,86,.72) 27%,
+      rgba(5,48,99,.42) 48%,
+      rgba(5,48,99,.12) 68%,
+      rgba(5,48,99,0) 86%),
+    url("https://raw.githubusercontent.com/haquepm/Crescent-Central-ERP/main/Construction%20ERP%20at%20Golden%20Hour.png") center center/cover no-repeat!important;
+}
+.saas-hero .hero-copy h1{font-size:clamp(38px,4.65vw,66px)!important;letter-spacing:-2.6px!important;line-height:1.08!important}
+@media(max-width:850px){
+ .saas-hero:before{background:linear-gradient(90deg,rgba(3,27,67,.88) 0%,rgba(4,39,86,.66) 55%,rgba(5,48,99,.2) 100%),url("https://raw.githubusercontent.com/haquepm/Crescent-Central-ERP/main/Construction%20ERP%20at%20Golden%20Hour.png") 62% center/cover no-repeat!important}
+ .saas-hero .hero-copy h1{font-size:clamp(36px,7vw,58px)!important;letter-spacing:-1.8px!important}
+}
+
 </style>
 </head>
 <body>
@@ -758,7 +777,7 @@ main#applications{position:absolute!important;left:0!important;right:0!important
   <div class="hero-content" id="top">
     <div class="hero-copy">
       <div class="eyebrow"><span class="eyebrow-line"></span> CENTRAL MANAGEMENT PORTAL</div>
-      <h1>All Operations.<br><em>One ERP.</em></h1>
+      <h1>Everything Connected.<br><em>Work, made simpler.</em></h1>
       <p>Access all your business applications in one place and keep your projects, people and processes moving.</p>
       <div class="hero-features">
         <div><span class="feature-icon">⚙</span><b>Unified<br>Operations</b></div>
