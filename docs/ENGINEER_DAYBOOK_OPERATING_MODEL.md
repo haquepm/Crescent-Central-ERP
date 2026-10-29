@@ -2,6 +2,10 @@
 
 This document refines the Site Execution module around the user's clarified purpose. The product is a daily engineer's daybook connecting site-wide face attendance, engineer-wise crew allocation, drawing-marked work fronts, measured output, QS verification and billing handoff.
 
+## Confirmed allocation decision
+
+**Flexible engineer-wise crew allocation is approved.** An engineer may divide the workers assigned to them among multiple activities and drawing-marked areas during the same day. Workers may be moved between work fronts or transferred to another engineer with effective start/end times. Each worker's time/contribution must be attributed to the specific work front they actually worked on; the system must never count the same worker-hours twice. This is the confirmed operating rule for the first release.
+
 ## Non-negotiable business model
 
 Attendance, labour allocation, work assignment and measurement are separate linked records. A present labourer is not automatically assigned to an engineer; an allocated labourer is not proof that work was completed; a quantity entered by an engineer is not billable until QS verification (and any configured downstream approval) is complete.
@@ -32,7 +36,9 @@ Attendance, labour allocation, work assignment and measurement are separate link
 - attendance_sources: source system/device, integration type, active state and project/site mapping.
 - attendance_batches: source batch, project, work date, file/source reference, checksum, import status, imported by and reconciliation counts.
 - attendance_records: worker ID, project, work date, first-in/last-out, source status, raw source reference, exception state and source batch. Unique source attendance key prevents duplicate import.
-- labour_engineer_allocations: project/date/engineer, start/end, allocation status, created/closed audit fields.
+- labour_engineer_allocations: project/date/engineer crew header, status and audit fields.
+- labour_allocation_members: worker-level allocation periods with start/end, release/transfer reason and attendance link.
+- work_front_labour: explicit worker-to-work-front contribution periods/hours so the same engineer's crew can split across multiple activities and areas.
 - labour_allocation_members: allocation/worker, allocated time range, role/trade, release/transfer details. Enforce no overlapping active allocations for the same worker unless an explicit approved split is represented.
 - work_fronts: project/date/engineer, drawing revision, structure/floor/grid, activity, element or zone, drawing geometry/markup, work description and status.
 - work_front_labour: work front, allocation/member/worker, contribution time or worker-days and allocation snapshot.
@@ -85,7 +91,7 @@ Attendance, labour allocation, work assignment and measurement are separate link
 
 1. Confirm the existing attendance source and obtain a sample daily export/API contract. Initially implement safe Excel import using worker ID mapping, preserving the source file and showing a preview/reconciliation report. Existing Regular Muster and payroll remain untouched.
 2. Build labour master mapping, present pool and attendance exceptions.
-3. Build engineer crew allocation with transfer/release and overlap controls.
+3. Build flexible engineer crew allocation: one engineer crew can split across concurrent work fronts; workers can be transferred/released with time-bound history and no overlapping double-counted worker-hours.
 4. Build drawing revision viewer/markup and work-front selection.
 5. Build the date-wise engineer daybook and activity quantity entry.
 6. Build QS full/partial verification and audit trail.
@@ -103,3 +109,4 @@ Attendance, labour allocation, work assignment and measurement are separate link
 - Replaying an offline submission or billing handoff does not duplicate records.
 - Billing handoff includes source daybook, measurement, drawing reference, BOQ, verified quantity and reconciliation status.
 - Existing Regular Muster, payroll, Subcontractor Billing and other ERP modules remain unchanged.
+\n\n## Confirmation received\nThe user explicitly selected flexible engineer-wise crew allocation: workers may be divided between multiple activities and areas during the same day. This supersedes any fixed one-crew/one-activity-per-day interpretation.\n
